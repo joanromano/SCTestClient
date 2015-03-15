@@ -14,6 +14,8 @@
 		8C1CEEC01AB5A9CC00CA9CCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1CEEBE1AB5A9CC00CA9CCF /* LaunchScreen.xib */; };
 		8C1CEECC1AB5A9CC00CA9CCF /* SCTestClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEECB1AB5A9CC00CA9CCF /* SCTestClientTests.m */; };
 		8C1CEED61AB5ACE500CA9CCF /* FormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1CEED51AB5ACE500CA9CCF /* FormViewController.xib */; };
+		8C1CEED91AB5B4F000CA9CCF /* FormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEED81AB5B4F000CA9CCF /* FormViewModel.m */; };
+		8C1CEEDE1AB5C1DA00CA9CCF /* ResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEDD1AB5C1DA00CA9CCF /* ResultsViewModel.m */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,10 @@
 		8C1CEECA1AB5A9CC00CA9CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1CEECB1AB5A9CC00CA9CCF /* SCTestClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTestClientTests.m; sourceTree = "<group>"; };
 		8C1CEED51AB5ACE500CA9CCF /* FormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormViewController.xib; sourceTree = "<group>"; };
+		8C1CEED71AB5B4F000CA9CCF /* FormViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewModel.h; sourceTree = "<group>"; };
+		8C1CEED81AB5B4F000CA9CCF /* FormViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewModel.m; sourceTree = "<group>"; };
+		8C1CEEDC1AB5C1DA00CA9CCF /* ResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewModel.h; sourceTree = "<group>"; };
+		8C1CEEDD1AB5C1DA00CA9CCF /* ResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewModel.m; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,12 +113,11 @@
 			children = (
 				8C1CEEB31AB5A9CB00CA9CCF /* AppDelegate.h */,
 				8C1CEEB41AB5A9CB00CA9CCF /* AppDelegate.m */,
+				8C1CEEDA1AB5C1A100CA9CCF /* Form */,
 				8C1CEEBC1AB5A9CC00CA9CCF /* Images.xcassets */,
 				8C1CEEBE1AB5A9CC00CA9CCF /* LaunchScreen.xib */,
+				8C1CEEDB1AB5C1BC00CA9CCF /* Results */,
 				8C1CEEAF1AB5A9CB00CA9CCF /* Supporting Files */,
-				8C1CEEB61AB5A9CB00CA9CCF /* FormViewController.h */,
-				8C1CEEB71AB5A9CB00CA9CCF /* FormViewController.m */,
-				8C1CEED51AB5ACE500CA9CCF /* FormViewController.xib */,
 			);
 			path = SCTestClient;
 			sourceTree = "<group>";
@@ -141,6 +146,27 @@
 				8C1CEECA1AB5A9CC00CA9CCF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C1CEEDA1AB5C1A100CA9CCF /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				8C1CEEB61AB5A9CB00CA9CCF /* FormViewController.h */,
+				8C1CEEB71AB5A9CB00CA9CCF /* FormViewController.m */,
+				8C1CEED51AB5ACE500CA9CCF /* FormViewController.xib */,
+				8C1CEED71AB5B4F000CA9CCF /* FormViewModel.h */,
+				8C1CEED81AB5B4F000CA9CCF /* FormViewModel.m */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		8C1CEEDB1AB5C1BC00CA9CCF /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				8C1CEEDC1AB5C1DA00CA9CCF /* ResultsViewModel.h */,
+				8C1CEEDD1AB5C1DA00CA9CCF /* ResultsViewModel.m */,
+			);
+			name = Results;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +306,8 @@
 			files = (
 				8C1CEEB81AB5A9CB00CA9CCF /* FormViewController.m in Sources */,
 				8C1CEEB51AB5A9CB00CA9CCF /* AppDelegate.m in Sources */,
+				8C1CEED91AB5B4F000CA9CCF /* FormViewModel.m in Sources */,
+				8C1CEEDE1AB5C1DA00CA9CCF /* ResultsViewModel.m in Sources */,
 				8C1CEEB21AB5A9CB00CA9CCF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

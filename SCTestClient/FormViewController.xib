@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormViewController">
             <connections>
+                <outlet property="goButton" destination="XwB-88-L9Y" id="ulb-q6-Gd7"/>
                 <outlet property="usernameTextField" destination="btL-uX-Mxo" id="4ZH-S4-956"/>
                 <outlet property="view" destination="W4e-Zt-cJN" id="XWI-0p-vEh"/>
             </connections>
@@ -18,9 +19,8 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-uX-Mxo">
                     <rect key="frame" x="20" y="223" width="280" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                    <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <connections>
-                        <action selector="editingEnded:" destination="-1" eventType="editingDidEndOnExit" id="vY4-J0-oht"/>
                         <outlet property="delegate" destination="-1" id="jED-SK-BF1"/>
                     </connections>
                 </textField>
@@ -30,9 +30,6 @@
                     <state key="normal" title="Go!">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="KV4-w1-0gT"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +42,7 @@
                 <constraint firstAttribute="centerX" secondItem="btL-uX-Mxo" secondAttribute="centerX" id="vvn-LI-kec"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="462" y="349"/>
+            <point key="canvasLocation" x="182" y="353"/>
         </view>
     </objects>
 </document>
