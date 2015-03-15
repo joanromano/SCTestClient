@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultsViewController">
             <connections>
+                <outlet property="activityIndicatorView" destination="K5c-Fb-Ada" id="TyU-WS-PYH"/>
                 <outlet property="resultsTableView" destination="5af-yP-K4v" id="IUM-8n-5WZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,6 +23,10 @@
                         <outlet property="dataSource" destination="-1" id="Z0Z-ev-QQo"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="K5c-Fb-Ada">
+                    <rect key="frame" x="142" y="265" width="37" height="37"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -29,6 +34,8 @@
                 <constraint firstItem="5af-yP-K4v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MYF-kS-I6p"/>
                 <constraint firstAttribute="bottom" secondItem="5af-yP-K4v" secondAttribute="bottom" id="Nyb-Tx-Fo0"/>
                 <constraint firstItem="5af-yP-K4v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TRq-uT-HKa"/>
+                <constraint firstAttribute="centerX" secondItem="K5c-Fb-Ada" secondAttribute="centerX" constant="-0.5" id="nVT-cE-DAo"/>
+                <constraint firstAttribute="centerY" secondItem="K5c-Fb-Ada" secondAttribute="centerY" constant="0.5" id="whq-Hh-7Tn"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="126" y="30"/>

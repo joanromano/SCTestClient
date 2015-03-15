@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class RACSignal;
+
 @interface ResultsViewModel : NSObject
 
 @property (nonatomic, copy, readonly) NSString *input;
 
 - (instancetype)initWithInput:(NSString *)input;
+
+- (RACSignal *)artists;
 
 @end

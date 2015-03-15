@@ -12,12 +12,16 @@
 #import "SectionedArrayDataSource.h"
 #import "ArtistCellAdapter.h"
 
+#import <RACEXTScope.h>
+#import <RACSignal.h>
+
 @interface ResultsViewController ()
 
 @property (nonatomic, strong) ResultsViewModel *viewModel;
 @property (nonatomic, strong) SectionedArrayDataSource *dataSource;
 
 @property (nonatomic, weak) IBOutlet UITableView *resultsTableView;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -44,8 +48,22 @@
 {
     [super viewDidLoad];
     
+    [self setupBindingsAndSubviews];
+}
+
+#pragma mark - Private
+
+- (void)setupBindingsAndSubviews
+{
+    @weakify(self)
+    
     self.dataSource = [[SectionedArrayDataSource alloc] initWithTableView:self.resultsTableView cellAdapter:[[ArtistCellAdapter alloc] init]];
-    self.dataSource.items = @[@[@"asd",@"asd",@"asd",@"asd",@"asd"], @[@"asd",@"asd",@"asd",@"asd",@"asd"]];
+    
+    [self.viewModel.artists subscribeNext:^(id items) {
+        @strongify(self)
+        self.dataSource.items = items;
+        [self.activityIndicatorView stopAnimating];
+    }];
 }
 
 @end

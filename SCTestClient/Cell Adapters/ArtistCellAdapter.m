@@ -15,7 +15,7 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 - (UITableViewCell *)cellForTableView:(UITableView *)tableView item:(id)item atIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = item;
+    cell.textLabel.text = item[@"username"];
     
     return cell;
 }
