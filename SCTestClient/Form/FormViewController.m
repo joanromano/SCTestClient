@@ -21,6 +21,7 @@
 #import <UITextField+RACSignalSupport.h>
 
 #import "FormViewModel.h"
+#import "ResultsViewController.h"
 
 @interface FormViewController ()
 
@@ -38,6 +39,8 @@
     if (self = [super init])
     {
         _viewModel = [[FormViewModel alloc] init];
+        
+        self.title = @"Enter Username";
     }
     
     return self;
@@ -70,9 +73,11 @@
          [self.usernameTextField rac_signalForControlEvents:UIControlEventEditingDidEndOnExit]]]
       mapReplace:RACTuplePack(@YES)]];
     
-    [[self.goButton.rac_command.executionSignals flatten] subscribeNext:^(id x) {
-        NSLog(@"%@", x);
-    }];
+    [self.navigationController rac_liftSelector:@selector(pushViewController:animated:)
+                           withSignalsFromArray:
+  @[[[self.goButton.rac_command.executionSignals flatten] map:^id(id viewModel) {
+        return [[ResultsViewController alloc] initWithViewModel:viewModel];
+    }], [RACSignal return:@YES]]];
 }
 
 @end

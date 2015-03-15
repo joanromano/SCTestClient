@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     FormViewController *rootViewController = [[FormViewController alloc] init];
-    self.window.rootViewController = rootViewController;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     
     return YES;
