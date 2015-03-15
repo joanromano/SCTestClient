@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DAF4D3E0-9209-46E8-AFDD-6A158CDDA872</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SCTestClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0A9AD020E07E57E6C50D3D226849FD2B55217E8A</key>
+		<string>github.com:joanromano/SCTestClient.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SCTestClient.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0A9AD020E07E57E6C50D3D226849FD2B55217E8A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:joanromano/SCTestClient.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0A9AD020E07E57E6C50D3D226849FD2B55217E8A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0A9AD020E07E57E6C50D3D226849FD2B55217E8A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SCTestClient</string>
+		</dict>
+	</array>
+</dict>
+</plist>

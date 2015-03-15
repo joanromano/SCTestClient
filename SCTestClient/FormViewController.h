@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FormViewController.h.h
 //  SCTestClient
 //
 //  Created by Joan Romano on 3/15/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FormViewController : UIViewController
 
 
 @end

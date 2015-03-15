@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "FormViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
-    ViewController *rootViewController = [[ViewController alloc] init];
+    FormViewController *rootViewController = [[FormViewController alloc] init];
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     

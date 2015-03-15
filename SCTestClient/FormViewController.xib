@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormViewController">
+            <connections>
+                <outlet property="usernameTextField" destination="btL-uX-Mxo" id="4ZH-S4-956"/>
+                <outlet property="view" destination="W4e-Zt-cJN" id="XWI-0p-vEh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="W4e-Zt-cJN">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-uX-Mxo">
+                    <rect key="frame" x="20" y="223" width="280" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <action selector="editingEnded:" destination="-1" eventType="editingDidEndOnExit" id="vY4-J0-oht"/>
+                        <outlet property="delegate" destination="-1" id="jED-SK-BF1"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwB-88-L9Y">
+                    <rect key="frame" x="145" y="285" width="31" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Go!">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="KV4-w1-0gT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XwB-88-L9Y" firstAttribute="centerX" secondItem="btL-uX-Mxo" secondAttribute="centerX" id="42r-AG-Gs7"/>
+                <constraint firstItem="XwB-88-L9Y" firstAttribute="top" secondItem="btL-uX-Mxo" secondAttribute="bottom" constant="40" id="GQa-pt-96S"/>
+                <constraint firstAttribute="centerY" secondItem="btL-uX-Mxo" secondAttribute="centerY" constant="50" id="Nhp-V9-unH"/>
+                <constraint firstItem="btL-uX-Mxo" firstAttribute="leading" secondItem="W4e-Zt-cJN" secondAttribute="leading" constant="20" id="WcS-Bv-m2I"/>
+                <constraint firstAttribute="trailing" secondItem="btL-uX-Mxo" secondAttribute="trailing" constant="20" id="X9d-Ms-Fgn"/>
+                <constraint firstAttribute="centerX" secondItem="btL-uX-Mxo" secondAttribute="centerX" id="vvn-LI-kec"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="462" y="349"/>
+        </view>
+    </objects>
+</document>
