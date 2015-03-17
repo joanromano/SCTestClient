@@ -19,10 +19,7 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = artist.displayName;
-    
-    [Fetcher imageWithURL:artist.iconURL completionBlock:^(UIImage *image) {
-        cell.imageView.image = image;
-    }];
+    [Fetcher imageWithURL:artist.iconURL imageView:cell.imageView];
     
     return cell;
 }

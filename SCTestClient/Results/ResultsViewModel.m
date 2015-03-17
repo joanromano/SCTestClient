@@ -50,7 +50,7 @@
     return self;
 }
 
-- (RACSignal *)artistsSignal
+- (RACSignal *)nextArtistsSignal
 {
     @weakify(self)
     

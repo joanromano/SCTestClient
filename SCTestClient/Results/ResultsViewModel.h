@@ -16,6 +16,6 @@
 
 - (instancetype)initWithUserInput:(NSString *)input;
 
-- (RACSignal *)artistsSignal;
+- (RACSignal *)nextArtistsSignal;
 
 @end

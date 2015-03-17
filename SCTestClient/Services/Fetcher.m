@@ -12,7 +12,7 @@
 #import <RACDisposable.h>
 #import <RACSubscriber.h>
 #import <RACSignal+Operations.h>
-#import <UIKit/UIImage.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation Fetcher
 
@@ -43,20 +43,9 @@
     }] deliverOnMainThread];
 }
 
-+ (void)imageWithURL:(NSURL *)imageURL completionBlock:(void(^)(UIImage *))completion
++ (void)imageWithURL:(NSURL *)imageURL imageView:(UIImageView *)imageView
 {
-    [[NSURLSession.sharedSession dataTaskWithURL:imageURL
-           completionHandler:^(NSData *data,
-                               NSURLResponse *response,
-                               NSError *error) {
-               if (!error && completion)
-               {
-                   dispatch_async(dispatch_get_main_queue(), ^{
-                       completion([UIImage imageWithData:data]);
-                   });
-               }
-               
-           }] resume];
+    [imageView sd_setImageWithURL:imageURL];
 }
 
 @end

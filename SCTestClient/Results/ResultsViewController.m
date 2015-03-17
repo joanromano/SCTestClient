@@ -64,7 +64,7 @@
 {
     @weakify(self)
     
-    [self.viewModel.artistsSignal subscribeNext:^(id items) {
+    [self.viewModel.nextArtistsSignal subscribeNext:^(id items) {
         @strongify(self)
         self.dataSource.items = items;
         [self.activityIndicatorView stopAnimating];
@@ -73,7 +73,7 @@
 
 - (RACSignal *)loadNextArtistsSignal
 {
-    return self.viewModel.artistsSignal;
+    return self.viewModel.nextArtistsSignal;
 }
 
 - (void)setupBindingsAndSubviews
