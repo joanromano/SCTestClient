@@ -64,4 +64,9 @@
     return [self.cellAdapter cellForTableView:tableView item:[self itemAtIndexPath:indexPath] atIndexPath:indexPath];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Group %@", @(section)];
+}
+
 @end

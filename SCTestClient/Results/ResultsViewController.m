@@ -64,16 +64,22 @@
 {
     @weakify(self)
     
+    [self toggleRightNavigationItem];
+    
     [self.viewModel.nextArtistsSignal subscribeNext:^(id items) {
         @strongify(self)
         self.dataSource.items = items;
         [self.activityIndicatorView stopAnimating];
+        [self toggleRightNavigationItem];
+    } error:^(NSError *error) {
+        @strongify(self)
+        [self toggleRightNavigationItem];
     }];
 }
 
-- (RACSignal *)loadNextArtistsSignal
+- (void)toggleRightNavigationItem
 {
-    return self.viewModel.nextArtistsSignal;
+    self.navigationItem.rightBarButtonItem.enabled = !self.navigationItem.rightBarButtonItem.enabled;
 }
 
 - (void)setupBindingsAndSubviews
