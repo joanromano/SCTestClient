@@ -8,55 +8,66 @@
 
 #import "ResultsViewModel.h"
 
+#import <RACStream.h>
+#import <RACSequence.h>
 #import <RACSignal.h>
-#import <RACDisposable.h>
-#import <RACSubscriber.h>
-#import <RACSignal+Operations.h>
+#import <RACEXTScope.h>
+#import <NSArray+RACSequenceAdditions.h>
+
+#import "Artist.h"
+#import "Fetcher.h"
+
+@implementation NSArray (Users)
+
+- (NSArray *)artistArray
+{
+    return [self.rac_sequence map:^id(NSDictionary *dictionary) {
+        return [[Artist alloc] initWithDictionary:dictionary];
+    }].array;
+}
+
+@end
 
 @interface ResultsViewModel ()
 
-@property (nonatomic, copy) NSString *input;
+@property (nonatomic, copy) NSString *userInput;
+
+@property (nonatomic) NSUInteger currentPage;
+@property (nonatomic, copy) NSArray *loadedArtists;
 
 @end
 
 @implementation ResultsViewModel
 
-- (instancetype)initWithInput:(NSString *)input
+- (instancetype)initWithUserInput:(NSString *)input
 {
     if (self = [super init])
     {
-        _input = [input copy];
+        _userInput = [input copy];
+        _loadedArtists = @[@[], @[]];
     }
     
     return self;
 }
 
-- (RACSignal *)artists
+- (RACSignal *)artistsSignal
 {
+    @weakify(self)
+    
+    self.currentPage += 1;
+    
     return
-    [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSURLSession *session = [NSURLSession sharedSession];
-        NSURLSessionDataTask *task =
-        [session dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/users?username=%@", self.input]]
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error) {
-                    if (!error)
-                    {
-                        [subscriber sendNext:@[[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil], [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]]];
-                        [subscriber sendCompleted];
-                    }
-                    else
-                    {
-                        [subscriber sendError:error];
-                    }
-                        
-                }];
-        [task resume];
-        return [RACDisposable disposableWithBlock:^{
-            [task cancel];
-        }];
-    }] deliverOnMainThread];
+    [[Fetcher GET:[NSString stringWithFormat:@"http://localhost:3000/users?username=%@&page=%@", self.userInput, @(self.currentPage)]]
+     map:^id(NSArray *artistsArray) {
+         @strongify(self)
+         
+         NSMutableArray *mutableFirstDegre = [self.loadedArtists.firstObject mutableCopy],
+                        *mutableSecondDegree = [self.loadedArtists.lastObject mutableCopy];
+         [mutableFirstDegre addObjectsFromArray:[artistsArray.firstObject artistArray]];
+         [mutableSecondDegree addObjectsFromArray:[artistsArray.lastObject artistArray]];
+         
+         return self.loadedArtists = @[[mutableFirstDegre copy], [mutableSecondDegree copy]];
+    }];
 }
 
 @end

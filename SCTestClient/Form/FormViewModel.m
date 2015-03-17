@@ -37,7 +37,7 @@
         }]
          signalBlock:^RACSignal *(id input) {
              @strongify(self)
-             return [RACSignal return:[[ResultsViewModel alloc] initWithInput:self.formInput]];
+             return [RACSignal return:[[ResultsViewModel alloc] initWithUserInput:self.formInput]];
          }];
     }
     

@@ -12,10 +12,10 @@
 
 @interface ResultsViewModel : NSObject
 
-@property (nonatomic, copy, readonly) NSString *input;
+@property (nonatomic, copy, readonly) NSString *userInput;
 
-- (instancetype)initWithInput:(NSString *)input;
+- (instancetype)initWithUserInput:(NSString *)input;
 
-- (RACSignal *)artists;
+- (RACSignal *)artistsSignal;
 
 @end

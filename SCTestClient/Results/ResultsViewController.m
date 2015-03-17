@@ -29,7 +29,7 @@
 
 - (instancetype)init
 {
-    return [self initWithViewModel:[[ResultsViewModel alloc] initWithInput:@""]];
+    return [self initWithViewModel:[[ResultsViewModel alloc] initWithUserInput:@""]];
 }
 
 - (instancetype)initWithViewModel:(ResultsViewModel *)viewModel
@@ -38,7 +38,7 @@
     {
         _viewModel = viewModel;
         
-        self.title = @"Results";
+        self.title = viewModel.userInput;
     }
     
     return self;
@@ -51,19 +51,37 @@
     [self setupBindingsAndSubviews];
 }
 
+#pragma mark - Actions
+
+- (void)addBarButtonItemPressed
+{
+    [self loadNextArtists];
+}
+
 #pragma mark - Private
 
-- (void)setupBindingsAndSubviews
+- (void)loadNextArtists
 {
     @weakify(self)
     
-    self.dataSource = [[SectionedArrayDataSource alloc] initWithTableView:self.resultsTableView cellAdapter:[[ArtistCellAdapter alloc] init]];
-    
-    [self.viewModel.artists subscribeNext:^(id items) {
+    [self.viewModel.artistsSignal subscribeNext:^(id items) {
         @strongify(self)
         self.dataSource.items = items;
         [self.activityIndicatorView stopAnimating];
     }];
+}
+
+- (RACSignal *)loadNextArtistsSignal
+{
+    return self.viewModel.artistsSignal;
+}
+
+- (void)setupBindingsAndSubviews
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarButtonItemPressed)];
+    self.dataSource = [[SectionedArrayDataSource alloc] initWithTableView:self.resultsTableView cellAdapter:[[ArtistCellAdapter alloc] init]];
+    
+    [self loadNextArtists];
 }
 
 @end

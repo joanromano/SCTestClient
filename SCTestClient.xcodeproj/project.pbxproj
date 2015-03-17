@@ -20,6 +20,8 @@
 		8C1CEF011AB5E4A800CA9CCF /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEFD1AB5E4A800CA9CCF /* ResultsViewController.m */; };
 		8C1CEF021AB5E4A800CA9CCF /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1CEEFE1AB5E4A800CA9CCF /* ResultsViewController.xib */; };
 		8C1CEF031AB5E4A800CA9CCF /* ResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */; };
+		8C1CEF071AB8C76900CA9CCF /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF061AB8C76900CA9CCF /* Artist.m */; };
+		8C1CEF0B1AB8CC8200CA9CCF /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,10 @@
 		8C1CEEFE1AB5E4A800CA9CCF /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Results/ResultsViewController.xib; sourceTree = "<group>"; };
 		8C1CEEFF1AB5E4A800CA9CCF /* ResultsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewModel.h; path = Results/ResultsViewModel.h; sourceTree = "<group>"; };
 		8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewModel.m; path = Results/ResultsViewModel.m; sourceTree = "<group>"; };
+		8C1CEF051AB8C76900CA9CCF /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Artist.h; path = Model/Artist.h; sourceTree = "<group>"; };
+		8C1CEF061AB8C76900CA9CCF /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Artist.m; path = Model/Artist.m; sourceTree = "<group>"; };
+		8C1CEF091AB8CC8200CA9CCF /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fetcher.h; path = Services/Fetcher.h; sourceTree = "<group>"; };
+		8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fetcher.m; path = Services/Fetcher.m; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +136,9 @@
 				8C1CEEDA1AB5C1A100CA9CCF /* Form */,
 				8C1CEEBC1AB5A9CC00CA9CCF /* Images.xcassets */,
 				8C1CEEBE1AB5A9CC00CA9CCF /* LaunchScreen.xib */,
+				8C1CEF041AB8C74100CA9CCF /* Model */,
 				8C1CEEDB1AB5C1BC00CA9CCF /* Results */,
+				8C1CEF081AB8CC6700CA9CCF /* Services */,
 				8C1CEEAF1AB5A9CB00CA9CCF /* Supporting Files */,
 			);
 			path = SCTestClient;
@@ -203,6 +211,24 @@
 				8C1CEEF21AB5E49200CA9CCF /* SectionedArrayDataSource.m */,
 			);
 			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		8C1CEF041AB8C74100CA9CCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C1CEF051AB8C76900CA9CCF /* Artist.h */,
+				8C1CEF061AB8C76900CA9CCF /* Artist.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8C1CEF081AB8CC6700CA9CCF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8C1CEF091AB8CC8200CA9CCF /* Fetcher.h */,
+				8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,10 +370,12 @@
 				8C1CEEB51AB5A9CB00CA9CCF /* AppDelegate.m in Sources */,
 				8C1CEF011AB5E4A800CA9CCF /* ResultsViewController.m in Sources */,
 				8C1CEEFB1AB5E49C00CA9CCF /* FormViewModel.m in Sources */,
+				8C1CEF0B1AB8CC8200CA9CCF /* Fetcher.m in Sources */,
 				8C1CEF031AB5E4A800CA9CCF /* ResultsViewModel.m in Sources */,
 				8C1CEEF31AB5E49200CA9CCF /* SectionedArrayDataSource.m in Sources */,
 				8C1CEEF91AB5E49C00CA9CCF /* FormViewController.m in Sources */,
 				8C1CEEF01AB5E44600CA9CCF /* ArtistCellAdapter.m in Sources */,
+				8C1CEF071AB8C76900CA9CCF /* Artist.m in Sources */,
 				8C1CEEB21AB5A9CB00CA9CCF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

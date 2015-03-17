@@ -8,14 +8,21 @@
 
 #import "ArtistCellAdapter.h"
 
+#import "Artist.h"
+#import "Fetcher.h"
+
 static NSString *const kCellIdentifier = @"CellIdentifier";
 
 @implementation ArtistCellAdapter
 
-- (UITableViewCell *)cellForTableView:(UITableView *)tableView item:(id)item atIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)cellForTableView:(UITableView *)tableView item:(Artist *)artist atIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = item[@"username"];
+    cell.textLabel.text = artist.displayName;
+    
+    [Fetcher imageWithURL:artist.iconURL completionBlock:^(UIImage *image) {
+        cell.imageView.image = image;
+    }];
     
     return cell;
 }
