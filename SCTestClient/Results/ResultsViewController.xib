@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultsViewController">
             <connections>
                 <outlet property="activityIndicatorView" destination="K5c-Fb-Ada" id="TyU-WS-PYH"/>
+                <outlet property="noUserFoundLabel" destination="BMI-M7-V0X" id="lxD-Bk-fsd"/>
                 <outlet property="resultsTableView" destination="5af-yP-K4v" id="IUM-8n-5WZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,6 +24,12 @@
                         <outlet property="dataSource" destination="-1" id="Z0Z-ev-QQo"/>
                     </connections>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMI-M7-V0X">
+                    <rect key="frame" x="20" y="273" width="280" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="K5c-Fb-Ada">
                     <rect key="frame" x="142" y="265" width="37" height="37"/>
                     <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,14 +37,23 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="BMI-M7-V0X" secondAttribute="trailing" constant="20" id="1RU-ly-gRE"/>
+                <constraint firstAttribute="centerX" secondItem="BMI-M7-V0X" secondAttribute="centerX" id="BuP-sf-1qf"/>
                 <constraint firstAttribute="trailing" secondItem="5af-yP-K4v" secondAttribute="trailing" id="HHX-I1-afC"/>
                 <constraint firstItem="5af-yP-K4v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MYF-kS-I6p"/>
                 <constraint firstAttribute="bottom" secondItem="5af-yP-K4v" secondAttribute="bottom" id="Nyb-Tx-Fo0"/>
                 <constraint firstItem="5af-yP-K4v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TRq-uT-HKa"/>
+                <constraint firstAttribute="centerY" secondItem="BMI-M7-V0X" secondAttribute="centerY" id="ZbQ-oa-LHV"/>
+                <constraint firstItem="BMI-M7-V0X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jGs-gk-dcJ"/>
                 <constraint firstAttribute="centerX" secondItem="K5c-Fb-Ada" secondAttribute="centerX" constant="-0.5" id="nVT-cE-DAo"/>
                 <constraint firstAttribute="centerY" secondItem="K5c-Fb-Ada" secondAttribute="centerY" constant="0.5" id="whq-Hh-7Tn"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="BuP-sf-1qf"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="126" y="30"/>
         </view>
     </objects>

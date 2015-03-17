@@ -21,6 +21,7 @@
 @property (nonatomic, strong) SectionedArrayDataSource *dataSource;
 
 @property (nonatomic, weak) IBOutlet UITableView *resultsTableView;
+@property (nonatomic, weak) IBOutlet UILabel *noUserFoundLabel;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @end
@@ -69,12 +70,20 @@
     [self.viewModel.nextArtistsSignal subscribeNext:^(id items) {
         @strongify(self)
         self.dataSource.items = items;
-        [self.activityIndicatorView stopAnimating];
-        [self toggleRightNavigationItem];
+        [self toggleSubviews];
     } error:^(NSError *error) {
         @strongify(self)
-        [self toggleRightNavigationItem];
+        [self toggleSubviews];
     }];
+}
+
+- (void)toggleSubviews
+{
+    BOOL artistsAvailable = [self.dataSource itemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] != nil;
+    [self.activityIndicatorView stopAnimating];
+    [self toggleRightNavigationItem];
+    self.noUserFoundLabel.hidden = artistsAvailable;
+    self.resultsTableView.hidden = !artistsAvailable;
 }
 
 - (void)toggleRightNavigationItem
@@ -84,6 +93,10 @@
 
 - (void)setupBindingsAndSubviews
 {
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"No user with username %@ is found", self.viewModel.userInput]];
+    [mutableAttributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17.0] range:[mutableAttributedString.string rangeOfString:self.viewModel.userInput]];
+    
+    self.noUserFoundLabel.attributedText = [mutableAttributedString copy];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarButtonItemPressed)];
     self.dataSource = [[SectionedArrayDataSource alloc] initWithTableView:self.resultsTableView cellAdapter:[[ArtistCellAdapter alloc] init]];
     
