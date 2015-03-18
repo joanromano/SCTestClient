@@ -11,7 +11,6 @@
 		8C1CEEB51AB5A9CB00CA9CCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEB41AB5A9CB00CA9CCF /* AppDelegate.m */; };
 		8C1CEEBD1AB5A9CC00CA9CCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1CEEBC1AB5A9CC00CA9CCF /* Images.xcassets */; };
 		8C1CEEC01AB5A9CC00CA9CCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1CEEBE1AB5A9CC00CA9CCF /* LaunchScreen.xib */; };
-		8C1CEECC1AB5A9CC00CA9CCF /* SCTestClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEECB1AB5A9CC00CA9CCF /* SCTestClientTests.m */; };
 		8C1CEEF01AB5E44600CA9CCF /* ArtistCellAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEEE1AB5E44600CA9CCF /* ArtistCellAdapter.m */; };
 		8C1CEEF31AB5E49200CA9CCF /* SectionedArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEF21AB5E49200CA9CCF /* SectionedArrayDataSource.m */; };
 		8C1CEEF91AB5E49C00CA9CCF /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEF51AB5E49C00CA9CCF /* FormViewController.m */; };
@@ -22,6 +21,12 @@
 		8C1CEF031AB5E4A800CA9CCF /* ResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */; };
 		8C1CEF071AB8C76900CA9CCF /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF061AB8C76900CA9CCF /* Artist.m */; };
 		8C1CEF0B1AB8CC8200CA9CCF /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */; };
+		8C1CEF141AB8EBA200CA9CCF /* FormViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */; };
+		8C1CEF151AB8EBD200CA9CCF /* FormViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEF81AB5E49C00CA9CCF /* FormViewModel.m */; };
+		8C1CEF161AB8F25400CA9CCF /* ResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */; };
+		8C1CEF171AB8F26F00CA9CCF /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */; };
+		8C1CEF181AB8F27600CA9CCF /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF061AB8C76900CA9CCF /* Artist.m */; };
+		CB8B4FABE6515950BBF38314 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +52,6 @@
 		8C1CEEBF1AB5A9CC00CA9CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8C1CEEC51AB5A9CC00CA9CCF /* SCTestClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCTestClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1CEECA1AB5A9CC00CA9CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C1CEECB1AB5A9CC00CA9CCF /* SCTestClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCTestClientTests.m; sourceTree = "<group>"; };
 		8C1CEEED1AB5E44600CA9CCF /* ArtistCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArtistCellAdapter.h; path = "Cell Adapters/ArtistCellAdapter.h"; sourceTree = "<group>"; };
 		8C1CEEEE1AB5E44600CA9CCF /* ArtistCellAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArtistCellAdapter.m; path = "Cell Adapters/ArtistCellAdapter.m"; sourceTree = "<group>"; };
 		8C1CEEEF1AB5E44600CA9CCF /* CellAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAdapterProtocol.h; path = "Cell Adapters/CellAdapterProtocol.h"; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		8C1CEF061AB8C76900CA9CCF /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Artist.m; path = Model/Artist.m; sourceTree = "<group>"; };
 		8C1CEF091AB8CC8200CA9CCF /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fetcher.h; path = Services/Fetcher.h; sourceTree = "<group>"; };
 		8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fetcher.m; path = Services/Fetcher.m; sourceTree = "<group>"; };
+		8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewModelTests.m; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8B4FABE6515950BBF38314 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +162,7 @@
 		8C1CEEC81AB5A9CC00CA9CCF /* SCTestClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C1CEECB1AB5A9CC00CA9CCF /* SCTestClientTests.m */,
+				8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */,
 				8C1CEEC91AB5A9CC00CA9CCF /* Supporting Files */,
 			);
 			path = SCTestClientTests;
@@ -257,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C1CEED21AB5A9CC00CA9CCF /* Build configuration list for PBXNativeTarget "SCTestClientTests" */;
 			buildPhases = (
+				93E12A811B732A87A1D868FE /* Check Pods Manifest.lock */,
 				8C1CEEC11AB5A9CC00CA9CCF /* Sources */,
 				8C1CEEC21AB5A9CC00CA9CCF /* Frameworks */,
 				8C1CEEC31AB5A9CC00CA9CCF /* Resources */,
+				6E869F5A260BC6F20489DADD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,6 +353,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6E869F5A260BC6F20489DADD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8225DCEFF96B19D836AC1881 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +381,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E12A811B732A87A1D868FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -384,7 +422,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1CEECC1AB5A9CC00CA9CCF /* SCTestClientTests.m in Sources */,
+				8C1CEF141AB8EBA200CA9CCF /* FormViewModelTests.m in Sources */,
+				8C1CEF151AB8EBD200CA9CCF /* FormViewModel.m in Sources */,
+				8C1CEF171AB8F26F00CA9CCF /* Fetcher.m in Sources */,
+				8C1CEF181AB8F27600CA9CCF /* Artist.m in Sources */,
+				8C1CEF161AB8F25400CA9CCF /* ResultsViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,8 +554,8 @@
 		};
 		8C1CEED31AB5A9CC00CA9CCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F293F4799F64AEB1253A3C /* Pods.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -525,14 +567,13 @@
 				INFOPLIST_FILE = SCTestClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCTestClient.app/SCTestClient";
 			};
 			name = Debug;
 		};
 		8C1CEED41AB5A9CC00CA9CCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -540,7 +581,6 @@
 				INFOPLIST_FILE = SCTestClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCTestClient.app/SCTestClient";
 			};
 			name = Release;
 		};

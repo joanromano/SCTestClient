@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *formInput;
 
 /**
- A command which when enabled will invoke a signal which will send a new results view model on next event and then complete.
+ A command which, when enabled, will invoke a signal which will send a new results view model on next event and then complete. The command will be enabled only when `formInput` length is greater than 0.
  */
 @property (nonatomic, strong, readonly) RACCommand *formCommand;
 
