@@ -32,6 +32,7 @@
 		8C1CEF201ABA434700CA9CCF /* SectionedArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEF21AB5E49200CA9CCF /* SectionedArrayDataSource.m */; };
 		8C1CEF231ABA441000CA9CCF /* MockCellAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */; };
 		8C1CEF261ABB660E00CA9CCF /* MockFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF251ABB660E00CA9CCF /* MockFetcher.m */; };
+		8C1CEF281ABB6FBE00CA9CCF /* ArtistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF271ABB6FBE00CA9CCF /* ArtistTests.m */; };
 		CB8B4FABE6515950BBF38314 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockCellAdapter.m; sourceTree = "<group>"; };
 		8C1CEF241ABB660E00CA9CCF /* MockFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFetcher.h; sourceTree = "<group>"; };
 		8C1CEF251ABB660E00CA9CCF /* MockFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFetcher.m; sourceTree = "<group>"; };
+		8C1CEF271ABB6FBE00CA9CCF /* ArtistTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistTests.m; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 		8C1CEEC81AB5A9CC00CA9CCF /* SCTestClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C1CEF271ABB6FBE00CA9CCF /* ArtistTests.m */,
 				8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */,
 				8C1CEF211ABA441000CA9CCF /* MockCellAdapter.h */,
 				8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */,
@@ -450,6 +453,7 @@
 				8C1CEF1F1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m in Sources */,
 				8C1CEF151AB8EBD200CA9CCF /* FormViewModel.m in Sources */,
 				8C1CEF171AB8F26F00CA9CCF /* Fetcher.m in Sources */,
+				8C1CEF281ABB6FBE00CA9CCF /* ArtistTests.m in Sources */,
 				8C1CEF231ABA441000CA9CCF /* MockCellAdapter.m in Sources */,
 				8C1CEF201ABA434700CA9CCF /* SectionedArrayDataSource.m in Sources */,
 				8C1CEF181AB8F27600CA9CCF /* Artist.m in Sources */,
