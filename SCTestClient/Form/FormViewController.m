@@ -73,8 +73,7 @@
          [self.usernameTextField rac_signalForControlEvents:UIControlEventEditingDidEndOnExit]]]
       mapReplace:RACTuplePack(@YES)]];
     
-    [self.navigationController rac_liftSelector:@selector(pushViewController:animated:)
-                           withSignalsFromArray:
+    [self.navigationController rac_liftSelector:@selector(pushViewController:animated:) withSignalsFromArray:
   @[[[self.goButton.rac_command.executionSignals flatten] map:^id(id viewModel) {
         return [[ResultsViewController alloc] initWithViewModel:viewModel];
     }], [RACSignal return:@YES]]];

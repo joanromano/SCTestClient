@@ -26,6 +26,11 @@
 		8C1CEF161AB8F25400CA9CCF /* ResultsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */; };
 		8C1CEF171AB8F26F00CA9CCF /* Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */; };
 		8C1CEF181AB8F27600CA9CCF /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF061AB8C76900CA9CCF /* Artist.m */; };
+		8C1CEF1A1ABA338700CA9CCF /* ResultsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF191ABA338700CA9CCF /* ResultsViewModelTests.m */; };
+		8C1CEF1D1ABA34F300CA9CCF /* UIImageView+Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF1C1ABA34F300CA9CCF /* UIImageView+Fetcher.m */; };
+		8C1CEF1F1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF1E1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m */; };
+		8C1CEF201ABA434700CA9CCF /* SectionedArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEEF21AB5E49200CA9CCF /* SectionedArrayDataSource.m */; };
+		8C1CEF231ABA441000CA9CCF /* MockCellAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */; };
 		CB8B4FABE6515950BBF38314 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,12 @@
 		8C1CEF091AB8CC8200CA9CCF /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fetcher.h; path = Services/Fetcher.h; sourceTree = "<group>"; };
 		8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fetcher.m; path = Services/Fetcher.m; sourceTree = "<group>"; };
 		8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewModelTests.m; sourceTree = "<group>"; };
+		8C1CEF191ABA338700CA9CCF /* ResultsViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewModelTests.m; sourceTree = "<group>"; };
+		8C1CEF1B1ABA34F300CA9CCF /* UIImageView+Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Fetcher.h"; path = "Services/UIImageView+Fetcher.h"; sourceTree = "<group>"; };
+		8C1CEF1C1ABA34F300CA9CCF /* UIImageView+Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Fetcher.m"; path = "Services/UIImageView+Fetcher.m"; sourceTree = "<group>"; };
+		8C1CEF1E1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionedArrayDataSourceTests.m; sourceTree = "<group>"; };
+		8C1CEF211ABA441000CA9CCF /* MockCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockCellAdapter.h; sourceTree = "<group>"; };
+		8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockCellAdapter.m; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				8C1CEF131AB8EBA200CA9CCF /* FormViewModelTests.m */,
+				8C1CEF211ABA441000CA9CCF /* MockCellAdapter.h */,
+				8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */,
+				8C1CEF191ABA338700CA9CCF /* ResultsViewModelTests.m */,
+				8C1CEF1E1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m */,
 				8C1CEEC91AB5A9CC00CA9CCF /* Supporting Files */,
 			);
 			path = SCTestClientTests;
@@ -233,6 +248,8 @@
 			children = (
 				8C1CEF091AB8CC8200CA9CCF /* Fetcher.h */,
 				8C1CEF0A1AB8CC8200CA9CCF /* Fetcher.m */,
+				8C1CEF1B1ABA34F300CA9CCF /* UIImageView+Fetcher.h */,
+				8C1CEF1C1ABA34F300CA9CCF /* UIImageView+Fetcher.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -414,6 +431,7 @@
 				8C1CEEF91AB5E49C00CA9CCF /* FormViewController.m in Sources */,
 				8C1CEEF01AB5E44600CA9CCF /* ArtistCellAdapter.m in Sources */,
 				8C1CEF071AB8C76900CA9CCF /* Artist.m in Sources */,
+				8C1CEF1D1ABA34F300CA9CCF /* UIImageView+Fetcher.m in Sources */,
 				8C1CEEB21AB5A9CB00CA9CCF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,8 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1CEF141AB8EBA200CA9CCF /* FormViewModelTests.m in Sources */,
+				8C1CEF1A1ABA338700CA9CCF /* ResultsViewModelTests.m in Sources */,
+				8C1CEF1F1ABA434200CA9CCF /* SectionedArrayDataSourceTests.m in Sources */,
 				8C1CEF151AB8EBD200CA9CCF /* FormViewModel.m in Sources */,
 				8C1CEF171AB8F26F00CA9CCF /* Fetcher.m in Sources */,
+				8C1CEF231ABA441000CA9CCF /* MockCellAdapter.m in Sources */,
+				8C1CEF201ABA434700CA9CCF /* SectionedArrayDataSource.m in Sources */,
 				8C1CEF181AB8F27600CA9CCF /* Artist.m in Sources */,
 				8C1CEF161AB8F25400CA9CCF /* ResultsViewModel.m in Sources */,
 			);

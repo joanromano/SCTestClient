@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SectionedArrayDataSource () <UITableViewDataSource>
+@interface SectionedArrayDataSource ()
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) id <CellAdapterProtocol> cellAdapter;

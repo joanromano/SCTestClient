@@ -9,7 +9,7 @@
 #import "ArtistCellAdapter.h"
 
 #import "Artist.h"
-#import "Fetcher.h"
+#import "UIImageView+Fetcher.h"
 
 static NSString *const kCellIdentifier = @"CellIdentifier";
 
@@ -19,7 +19,7 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = artist.displayName;
-    [Fetcher imageWithURL:artist.iconURL imageView:cell.imageView];
+    [cell.imageView setImageWithURL:artist.iconURL];
     
     return cell;
 }

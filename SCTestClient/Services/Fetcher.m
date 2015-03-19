@@ -12,7 +12,6 @@
 #import <RACDisposable.h>
 #import <RACSubscriber.h>
 #import <RACSignal+Operations.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation Fetcher
 
@@ -41,11 +40,6 @@
             [task cancel];
         }];
     }] deliverOnMainThread];
-}
-
-+ (void)imageWithURL:(NSURL *)imageURL imageView:(UIImageView *)imageView
-{
-    [imageView sd_setImageWithURL:imageURL];
 }
 
 @end

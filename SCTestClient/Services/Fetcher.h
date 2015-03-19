@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal, UIImageView;
+@class RACSignal;
 
 @interface Fetcher : NSObject
 
 + (RACSignal *)GET:(NSString *)path;
-
-+ (void)imageWithURL:(NSURL *)imageURL imageView:(UIImageView *)imageView;
 
 @end
