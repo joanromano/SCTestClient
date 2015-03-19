@@ -17,6 +17,8 @@
 #import "Artist.h"
 #import "Fetcher.h"
 
+static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/users?username=%@&page=%@";
+
 @implementation NSArray (Users)
 
 - (NSArray *)artistArray
@@ -33,6 +35,7 @@
 @property (nonatomic, copy) NSString *userInput;
 
 @property (nonatomic) NSUInteger currentPage;
+@property (nonatomic, strong) Fetcher *fetcher;
 @property (nonatomic, copy) NSArray *loadedArtists;
 
 @end
@@ -44,6 +47,7 @@
     if (self = [super init])
     {
         _userInput = [input copy];
+        _fetcher = [[Fetcher alloc] init];
         _loadedArtists = @[@[], @[]];
     }
     
@@ -57,7 +61,7 @@
     self.currentPage += 1;
     
     return
-    [[Fetcher GET:[NSString stringWithFormat:@"http://localhost:3000/users?username=%@&page=%@", self.userInput, @(self.currentPage)]]
+    [[self.fetcher GET:[NSString stringWithFormat:kUsersGetFormattedPath, self.userInput, @(self.currentPage)]]
      map:^id(NSArray *artistsArray) {
          @strongify(self)
          

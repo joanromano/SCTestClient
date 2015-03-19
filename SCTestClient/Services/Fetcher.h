@@ -12,6 +12,6 @@
 
 @interface Fetcher : NSObject
 
-+ (RACSignal *)GET:(NSString *)path;
+- (RACSignal *)GET:(NSString *)path;
 
 @end

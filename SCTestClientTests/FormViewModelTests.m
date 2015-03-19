@@ -92,7 +92,7 @@
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:2.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:0.0 handler:^(NSError *error) {
          XCTAssertTrue(resultsViewModel != nil, @"View model shouldn't be nil");
          XCTAssertTrue([resultsViewModel isKindOfClass:ResultsViewModel.class], @"View model should be of ResultsViewModel class");
          XCTAssertEqualObjects(self.sut.formInput, resultsViewModel.userInput, @"Both view models should have same input");

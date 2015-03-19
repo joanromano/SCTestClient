@@ -10,7 +10,7 @@
 
 @interface Artist : NSObject
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, copy, readonly) NSString *displayName, *username;
 @property (nonatomic, strong, readonly) NSURL *iconURL;

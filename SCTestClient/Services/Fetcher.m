@@ -15,7 +15,7 @@
 
 @implementation Fetcher
 
-+ (RACSignal *)GET:(NSString *)path
+- (RACSignal *)GET:(NSString *)path
 {
     return
     [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
