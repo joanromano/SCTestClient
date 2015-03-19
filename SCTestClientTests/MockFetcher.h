@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 SoundCloud. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Fetcher.h"
 
-@interface MockFetcher : NSObject
+@interface MockFetcher : Fetcher
 
 @property (nonatomic, copy) NSArray *response;
 

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal;
+@class RACSignal, Fetcher;
 
 @interface ResultsViewModel : NSObject
 
 @property (nonatomic, copy, readonly) NSString *userInput;
 
-- (instancetype)initWithUserInput:(NSString *)input NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithUserInput:(NSString *)input fetcher:(Fetcher *)fetcher NS_DESIGNATED_INITIALIZER;
 
 /**
  Retrieves the next page of artists, returning a signal that sends the acumulated artist array on next event and completes, or error if the fetch failed.

@@ -28,11 +28,6 @@
 
 @implementation ResultsViewController
 
-- (instancetype)init
-{
-    return [self initWithViewModel:[[ResultsViewModel alloc] initWithUserInput:@""]];
-}
-
 - (instancetype)initWithViewModel:(ResultsViewModel *)viewModel
 {
     if (self = [super init])

@@ -13,6 +13,7 @@
 #import <RACSignal.h>
 #import <RACEXTScope.h>
 
+#import "Fetcher.h"
 #import "ResultsViewModel.h"
 
 @interface FormViewModel ()
@@ -37,7 +38,7 @@
         }]
          signalBlock:^RACSignal *(id input) {
              @strongify(self)
-             return [RACSignal return:[[ResultsViewModel alloc] initWithUserInput:self.formInput]];
+             return [RACSignal return:[[ResultsViewModel alloc] initWithUserInput:self.formInput fetcher:[[Fetcher alloc] init]]];
          }];
     }
     

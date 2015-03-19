@@ -33,8 +33,7 @@
     
     self.userInput = @"username";
     self.fetcher = [[MockFetcher alloc] init];
-    self.sut = [[ResultsViewModel alloc] initWithUserInput:self.userInput];
-    [self.sut setValue:self.fetcher forKeyPath:@"fetcher"];
+    self.sut = [[ResultsViewModel alloc] initWithUserInput:self.userInput fetcher:self.fetcher];
 }
 
 - (void)tearDown

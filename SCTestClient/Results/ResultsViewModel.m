@@ -44,12 +44,12 @@ static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/users?us
 
 @implementation ResultsViewModel
 
-- (instancetype)initWithUserInput:(NSString *)input
+- (instancetype)initWithUserInput:(NSString *)input fetcher:(Fetcher *)fetcher
 {
     if (self = [super init])
     {
         _userInput = [input copy];
-        _fetcher = [[Fetcher alloc] init];
+        _fetcher = fetcher;
         _loadedArtists = @[@[], @[]];
     }
     
