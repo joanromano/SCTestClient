@@ -15,6 +15,7 @@
 
 #import <RACSignal.h>
 #import <RACSignal+Operations.h>
+#import <RACEXTScope.h>
 
 @interface ResultsViewModelTests : XCTestCase
 
@@ -67,6 +68,7 @@
 
 - (void)testTwoArtistsResponseTwoRequests
 {
+    @weakify(self)
     __block NSArray *artists = nil;
     self.fetcher.response = @[@[@{@"username" : @"user1"}],
                               @[@{@"username" : @"user2"}]];
@@ -74,6 +76,7 @@
     
     [[self.sut.nextArtistsSignal
         flattenMap:^RACStream *(id value) {
+            @strongify(self)
             return self.sut.nextArtistsSignal;
     }]
         subscribeNext:^(id x) {
@@ -90,6 +93,7 @@
 
 - (void)testThreeAndNoneArtistsResponseThreeRequests
 {
+    @weakify(self)
     __block NSArray *artists = nil;
     self.fetcher.response = @[@[@{@"username" : @"user1"}, @{@"username" : @"user2"}, @{@"username" : @"user3"}],
                               @[]];
@@ -97,9 +101,11 @@
     
     [[[self.sut.nextArtistsSignal
         flattenMap:^RACStream *(id value) {
+            @strongify(self)
             return self.sut.nextArtistsSignal;
     }]
         flattenMap:^RACStream *(id value) {
+            @strongify(self)
             return self.sut.nextArtistsSignal;
     }]
         subscribeNext:^(id x) {
@@ -115,6 +121,7 @@
 
 - (void)testNoArtistsResponseFourRequests
 {
+    @weakify(self)
     __block NSArray *artists = nil;
     self.fetcher.response = @[@[],
                               @[]];
@@ -122,9 +129,11 @@
     
     [[[self.sut.nextArtistsSignal
         flattenMap:^RACStream *(id value) {
+            @strongify(self)
             return self.sut.nextArtistsSignal;
     }]
         flattenMap:^RACStream *(id value) {
+            @strongify(self)
             return self.sut.nextArtistsSignal;
     }]
         subscribeNext:^(id x) {

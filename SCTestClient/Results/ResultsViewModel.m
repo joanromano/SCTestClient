@@ -12,7 +12,9 @@
 #import <RACSequence.h>
 #import <RACSignal.h>
 #import <RACEXTScope.h>
+#import <RACSignal+Operations.h>
 #import <NSArray+RACSequenceAdditions.h>
+#import <NSObject+RACPropertySubscribing.h>
 
 #import "Artist.h"
 #import "Fetcher.h"
@@ -61,17 +63,23 @@ static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/users?us
     self.currentPage += 1;
     
     return
-    [[self.fetcher GET:[NSString stringWithFormat:kUsersGetFormattedPath, self.userInput, @(self.currentPage)]]
-     map:^id(NSArray *artistsArray) {
+    [[RACSignal
+      combineLatest:
+  @[[RACSignal return:self.loadedArtists],
+    [self.fetcher GET:[NSString stringWithFormat:kUsersGetFormattedPath, self.userInput, @(self.currentPage)]]]
+      reduce:^id(NSArray *loadedArtists, NSArray *newArtists){
+          NSMutableArray *mutableFirstDegree = [loadedArtists.firstObject mutableCopy],
+                         *mutableSecondDegree = [loadedArtists.lastObject mutableCopy];
+                          
+          [mutableFirstDegree addObjectsFromArray:[newArtists.firstObject artistArray]];
+          [mutableSecondDegree addObjectsFromArray:[newArtists.lastObject artistArray]];
+                          
+          return @[[mutableFirstDegree copy], [mutableSecondDegree copy]];
+      }]
+     doNext:^(NSArray *loadedArtists) {
          @strongify(self)
-         
-         NSMutableArray *mutableFirstDegre = [self.loadedArtists.firstObject mutableCopy],
-                        *mutableSecondDegree = [self.loadedArtists.lastObject mutableCopy];
-         [mutableFirstDegre addObjectsFromArray:[artistsArray.firstObject artistArray]];
-         [mutableSecondDegree addObjectsFromArray:[artistsArray.lastObject artistArray]];
-         
-         return self.loadedArtists = @[[mutableFirstDegre copy], [mutableSecondDegree copy]];
-    }];
+         self.loadedArtists = loadedArtists;
+     }];
 }
 
 @end

@@ -12,8 +12,6 @@
 
 @interface ArtistTests : XCTestCase
 
-@property (nonatomic, strong) Artist *sut;
-
 @end
 
 @implementation ArtistTests
@@ -30,33 +28,33 @@
 
 - (void)testEmptyDictionary
 {
-    self.sut = [[Artist alloc] initWithDictionary:@{}];
+    Artist *sut = [[Artist alloc] initWithDictionary:@{}];
     
-    XCTAssertNotNil(self.sut, @"Artist shouldn't be nil");
-    XCTAssertNil(self.sut.displayName, @"Display name should be nil");
-    XCTAssertNil(self.sut.username, @"Display name should be nil");
+    XCTAssertNotNil(sut, @"Artist shouldn't be nil");
+    XCTAssertNil(sut.displayName, @"Display name should be nil");
+    XCTAssertNil(sut.username, @"Display name should be nil");
 }
 
 - (void)testEmptyJustUsername
 {
-    self.sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4"}];
+    Artist *sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4"}];
     
-    XCTAssertNotNil(self.sut.username, @"Artist username shouldn't be nil");
-    XCTAssertEqual(self.sut.username, @"user_4", @"Both usernames should be equal");
-    XCTAssertNil(self.sut.displayName, @"Display name should be nil");
+    XCTAssertNotNil(sut.username, @"Artist username shouldn't be nil");
+    XCTAssertEqual(sut.username, @"user_4", @"Both usernames should be equal");
+    XCTAssertNil(sut.displayName, @"Display name should be nil");
 }
 
 - (void)testFullUser
 {
-    self.sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4",
+    Artist *sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4",
                                                     @"display_name" : @"user_4",
                                                     @"icon_url" : @"https://robohash.org/user_4",
                                                     @"upload_track_count" : @40}];
     
-    XCTAssertNotNil(self.sut.username, @"Artist username shouldn't be nil");
-    XCTAssertNotNil(self.sut.displayName, @"Display name should be nil");
-    XCTAssertNotNil(self.sut.iconURL, @"Icon url username shouldn't be nil");
-    XCTAssertTrue(self.sut.uploadTrackCount == 40, @"Upload track count souldn' be nil");
+    XCTAssertNotNil(sut.username, @"Artist username shouldn't be nil");
+    XCTAssertNotNil(sut.displayName, @"Display name should be nil");
+    XCTAssertNotNil(sut.iconURL, @"Icon url username shouldn't be nil");
+    XCTAssertTrue(sut.uploadTrackCount == 40, @"Upload track count souldn' be nil");
 }
 
 
