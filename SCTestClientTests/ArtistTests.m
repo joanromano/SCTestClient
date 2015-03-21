@@ -32,7 +32,7 @@
     
     XCTAssertNotNil(sut, @"Artist shouldn't be nil");
     XCTAssertNil(sut.displayName, @"Display name should be nil");
-    XCTAssertNil(sut.username, @"Display name should be nil");
+    XCTAssertNil(sut.username, @"Artist username should be nil");
 }
 
 - (void)testEmptyJustUsername
@@ -44,7 +44,7 @@
     XCTAssertNil(sut.displayName, @"Display name should be nil");
 }
 
-- (void)testFullUser
+- (void)testFullArtist
 {
     Artist *sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4",
                                                     @"display_name" : @"user_4",
@@ -55,6 +55,21 @@
     XCTAssertNotNil(sut.displayName, @"Display name should be nil");
     XCTAssertNotNil(sut.iconURL, @"Icon url username shouldn't be nil");
     XCTAssertTrue(sut.uploadTrackCount == 40, @"Upload track count souldn' be nil");
+}
+
+- (void)testInvalidDictionaryParams
+{
+    Artist *sut = [[Artist alloc] initWithDictionary:@{@"username" : @"user_4",
+                                                       @"display_name" : @"user_4",
+                                                       @"icon_url" : @"https://robohash.org/user_4",
+                                                       @"upload_track_count" : @24,
+                                                       @"not" : @"whatever",
+                                                       @"foo" : @"bar"}];
+    
+    XCTAssertNotNil(sut.username, @"Artist username shouldn't be nil");
+    XCTAssertNotNil(sut.displayName, @"Display name should be nil");
+    XCTAssertNotNil(sut.iconURL, @"Icon url username shouldn't be nil");
+    XCTAssertTrue(sut.uploadTrackCount == 24, @"Upload track count souldn' be nil");
 }
 
 
