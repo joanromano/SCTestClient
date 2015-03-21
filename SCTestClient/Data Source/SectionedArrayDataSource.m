@@ -42,6 +42,13 @@
 
 - (void)setItems:(NSArray *)items
 {
+    [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (![obj isKindOfClass:NSArray.class])
+        {
+            [NSException raise:NSInvalidArgumentException format:@"Items property should be an array of arrays"];     
+        }
+    }];
+    
     _items = [items copy];
     
     [self.tableView reloadData];
