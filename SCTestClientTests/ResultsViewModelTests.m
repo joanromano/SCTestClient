@@ -49,8 +49,8 @@
 - (void)testTwoArtistsResponse
 {
     __block NSArray *artists = nil;
-    self.fetcher.response = @[@[@{@"username" : @"user1"}],
-                              @[@{@"username" : @"user2"}]];
+    self.fetcher.response = @{@"first_degree" : @[@{@"username" : @"user1"}],
+                              @"second_degree" : @[@{@"username" : @"user2"}]};
     XCTestExpectation *expectation = [self expectationWithDescription:self.name];
     
     [self.sut.nextArtistsSignal subscribeNext:^(id x) {
@@ -69,8 +69,8 @@
 {
     @weakify(self)
     __block NSArray *artists = nil;
-    self.fetcher.response = @[@[@{@"username" : @"user1"}],
-                              @[@{@"username" : @"user2"}]];
+    self.fetcher.response = @{@"first_degree" : @[@{@"username" : @"user1"}],
+                              @"second_degree" : @[@{@"username" : @"user2"}]};
     XCTestExpectation *expectation = [self expectationWithDescription:self.name];
     
     [[self.sut.nextArtistsSignal
@@ -94,8 +94,8 @@
 {
     @weakify(self)
     __block NSArray *artists = nil;
-    self.fetcher.response = @[@[@{@"username" : @"user1"}, @{@"username" : @"user2"}, @{@"username" : @"user3"}],
-                              @[]];
+    self.fetcher.response = @{@"first_degree" : @[@{@"username" : @"user1"}, @{@"username" : @"user2"}, @{@"username" : @"user3"}],
+                              @"second_degree" : @[]};
     XCTestExpectation *expectation = [self expectationWithDescription:self.name];
     
     [[[self.sut.nextArtistsSignal
@@ -122,8 +122,8 @@
 {
     @weakify(self)
     __block NSArray *artists = nil;
-    self.fetcher.response = @[@[],
-                              @[]];
+    self.fetcher.response = @{@"first_degree" : @[],
+                              @"second_degree" : @[]};
     XCTestExpectation *expectation = [self expectationWithDescription:self.name];
     
     [[[self.sut.nextArtistsSignal

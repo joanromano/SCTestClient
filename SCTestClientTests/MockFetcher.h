@@ -10,6 +10,6 @@
 
 @interface MockFetcher : Fetcher
 
-@property (nonatomic, copy) NSArray *response;
+@property (nonatomic, copy) NSDictionary *response;
 
 @end

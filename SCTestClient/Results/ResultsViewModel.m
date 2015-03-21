@@ -19,7 +19,7 @@
 #import "Artist.h"
 #import "Fetcher.h"
 
-static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/users?username=%@&page=%@";
+static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/artists?username=%@&page=%@";
 
 @implementation NSArray (Users)
 
@@ -67,12 +67,12 @@ static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/users?us
       combineLatest:
   @[[RACSignal return:self.loadedArtists],
     [self.fetcher GET:[NSString stringWithFormat:kUsersGetFormattedPath, self.userInput, @(self.currentPage)]]]
-      reduce:^id(NSArray *loadedArtists, NSArray *newArtists){
+      reduce:^id(NSArray *loadedArtists, NSDictionary *newArtists){
           NSMutableArray *mutableFirstDegree = [loadedArtists.firstObject mutableCopy],
                          *mutableSecondDegree = [loadedArtists.lastObject mutableCopy];
                           
-          [mutableFirstDegree addObjectsFromArray:[newArtists.firstObject artistArray]];
-          [mutableSecondDegree addObjectsFromArray:[newArtists.lastObject artistArray]];
+          [mutableFirstDegree addObjectsFromArray:[newArtists[@"first_degree"] artistArray]];
+          [mutableSecondDegree addObjectsFromArray:[newArtists[@"second_degree"] artistArray]];
                           
           return @[[mutableFirstDegree copy], [mutableSecondDegree copy]];
       }]

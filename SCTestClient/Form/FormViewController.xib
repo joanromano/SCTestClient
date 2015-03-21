@@ -13,11 +13,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="W4e-Zt-cJN">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-uX-Mxo">
-                    <rect key="frame" x="20" y="223" width="280" height="22"/>
+                    <rect key="frame" x="20" y="129" width="280" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     <connections>
@@ -25,7 +25,7 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwB-88-L9Y">
-                    <rect key="frame" x="145" y="285" width="31" height="35"/>
+                    <rect key="frame" x="145" y="191" width="31" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="Go!">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,13 +36,19 @@
             <constraints>
                 <constraint firstItem="XwB-88-L9Y" firstAttribute="centerX" secondItem="btL-uX-Mxo" secondAttribute="centerX" id="42r-AG-Gs7"/>
                 <constraint firstItem="XwB-88-L9Y" firstAttribute="top" secondItem="btL-uX-Mxo" secondAttribute="bottom" constant="40" id="GQa-pt-96S"/>
-                <constraint firstAttribute="centerY" secondItem="btL-uX-Mxo" secondAttribute="centerY" constant="50" id="Nhp-V9-unH"/>
+                <constraint firstAttribute="centerY" secondItem="btL-uX-Mxo" secondAttribute="centerY" constant="100" id="Nhp-V9-unH"/>
                 <constraint firstItem="btL-uX-Mxo" firstAttribute="leading" secondItem="W4e-Zt-cJN" secondAttribute="leading" constant="20" id="WcS-Bv-m2I"/>
                 <constraint firstAttribute="trailing" secondItem="btL-uX-Mxo" secondAttribute="trailing" constant="20" id="X9d-Ms-Fgn"/>
+                <constraint firstAttribute="centerX" secondItem="XwB-88-L9Y" secondAttribute="centerX" constant="-0.5" id="p5x-Cj-4F8"/>
                 <constraint firstAttribute="centerX" secondItem="btL-uX-Mxo" secondAttribute="centerX" id="vvn-LI-kec"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="182" y="353"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="42r-AG-Gs7"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="266" y="340"/>
         </view>
     </objects>
 </document>
