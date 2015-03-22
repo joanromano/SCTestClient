@@ -33,6 +33,7 @@
 		8C1CEF231ABA441000CA9CCF /* MockCellAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF221ABA441000CA9CCF /* MockCellAdapter.m */; };
 		8C1CEF261ABB660E00CA9CCF /* MockFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF251ABB660E00CA9CCF /* MockFetcher.m */; };
 		8C1CEF281ABB6FBE00CA9CCF /* ArtistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CEF271ABB6FBE00CA9CCF /* ArtistTests.m */; };
+		8C8FF0781ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8FF0771ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.m */; };
 		CB8B4FABE6515950BBF38314 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 		E1486782FF10B09A9C53A518 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EAF40C18BD3B72DCE1CA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,8 @@
 		8C1CEF241ABB660E00CA9CCF /* MockFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFetcher.h; sourceTree = "<group>"; };
 		8C1CEF251ABB660E00CA9CCF /* MockFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFetcher.m; sourceTree = "<group>"; };
 		8C1CEF271ABB6FBE00CA9CCF /* ArtistTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistTests.m; sourceTree = "<group>"; };
+		8C8FF0761ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+SCAdditions.h"; path = "Results/UIBarButtonItem+SCAdditions.h"; sourceTree = "<group>"; };
+		8C8FF0771ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+SCAdditions.m"; path = "Results/UIBarButtonItem+SCAdditions.m"; sourceTree = "<group>"; };
 		CE3319B6AD37A1417106CBF9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +222,8 @@
 				8C1CEEFE1AB5E4A800CA9CCF /* ResultsViewController.xib */,
 				8C1CEEFF1AB5E4A800CA9CCF /* ResultsViewModel.h */,
 				8C1CEF001AB5E4A800CA9CCF /* ResultsViewModel.m */,
+				8C8FF0761ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.h */,
+				8C8FF0771ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.m */,
 			);
 			name = Results;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				8C1CEF0B1AB8CC8200CA9CCF /* Fetcher.m in Sources */,
 				8C1CEF031AB5E4A800CA9CCF /* ResultsViewModel.m in Sources */,
 				8C1CEEF31AB5E49200CA9CCF /* SectionedArrayDataSource.m in Sources */,
+				8C8FF0781ABEE57600C6ABA3 /* UIBarButtonItem+SCAdditions.m in Sources */,
 				8C1CEEF91AB5E49C00CA9CCF /* FormViewController.m in Sources */,
 				8C1CEEF01AB5E44600CA9CCF /* ArtistCellAdapter.m in Sources */,
 				8C1CEF071AB8C76900CA9CCF /* Artist.m in Sources */,

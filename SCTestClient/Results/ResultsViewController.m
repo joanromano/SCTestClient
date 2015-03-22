@@ -11,6 +11,7 @@
 #import "ResultsViewModel.h"
 #import "SectionedArrayDataSource.h"
 #import "ArtistCellAdapter.h"
+#import "UIBarButtonItem+SCAdditions.h"
 
 #import <RACEXTScope.h>
 #import <RACSignal.h>
@@ -75,6 +76,7 @@
 - (void)toggleSubviews
 {
     BOOL artistsAvailable = [self.dataSource itemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] != nil;
+    
     [self.activityIndicatorView stopAnimating];
     [self toggleRightNavigationItem];
     self.noUserFoundLabel.hidden = artistsAvailable;
@@ -83,7 +85,16 @@
 
 - (void)toggleRightNavigationItem
 {
-    self.navigationItem.rightBarButtonItem.enabled = !self.navigationItem.rightBarButtonItem.enabled;
+    if (self.navigationItem.rightBarButtonItem.enabled)
+    {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityIndicatorBarButtonItem];
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+    else
+    {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBarButtonItemPressed)];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
 }
 
 - (void)setupBindingsAndSubviews
