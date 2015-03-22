@@ -19,7 +19,7 @@
 #import "Artist.h"
 #import "Fetcher.h"
 
-static NSString *const kUsersGetFormattedPath = @"http://localhost:3000/artists?username=%@&page=%@";
+static NSString *const kUsersGetFormattedPath = @"https://scartists.herokuapp.com/artists?username=%@&page=%@";
 
 @implementation NSArray (Users)
 
