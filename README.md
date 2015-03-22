@@ -1,5 +1,7 @@
 # SCTestClient
 
+![Alt text](https://raw.githubusercontent.com/joanromano/SCTestClient/master/SCTestClientImages/image-2.png)
+
 ## Prerequisites
 
 * [Git](http://git-scm.com/)
